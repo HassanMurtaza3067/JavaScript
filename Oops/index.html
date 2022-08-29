@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // Object Literal Syntax
-        const circle = {
-            radious: 1,
-            location: {
-                x: 1,
-                y: 1,
-            },
-            draw: function(){
-                console.log('draw');
-            }
-        };
+      const functionStore = {
+        doWork() {
+          document.write(`${this.name} is doing work`);
+        },
+      };
 
-        circle.draw();
+      // ********** FACTORY FUNCTION **********
+      function createPerson(name, age) {
+        return {
+          name,
+          age,
+        };
+      }
+
+      const person1 = createPerson("Hassan", 23);
+      person1.doWork = functionStore.doWork;
+      person1.doWork();
+
+      // ******** OBJECT LITERLS SYNTAX ******
+      // const circle = {
+      //     radious: 1,
+      //     location: {
+      //         x: 1,
+      //         y: 1,
+      //     },
+      //     draw: function(){
+      //         console.log('draw');
+      //     }
+      // };
+
+      // circle.draw();
     </script>
-</body>
+  </body>
 </html>

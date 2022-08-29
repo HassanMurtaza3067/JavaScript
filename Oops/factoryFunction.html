@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const functionStore = {
+        doWork() {
+          console.log(this.name + " is working in office");
+        },
+        eating() {
+          console.log(this.name + " is Eating");
+        },
+      };
+      // ==== FACTORY FUNCTION ====
+      function createPerson(name, age) {
+        const person = Object.create(functionStore);
+        person.name = name;
+        person.age = name;
+        return person;
+      }
+
+      const person1 = createPerson("Hassan", 23);
+      const person2 = createPerson("Usman", 25);
+      person1.doWork();
+      person1.eating();
+      person2.doWork();
+    </script>
+  </body>
+</html>
